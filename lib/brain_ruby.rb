@@ -32,9 +32,11 @@ module BrainRuby
       else
         nil
       end
+    end
 
     def config
       @@config
     end
+
   end
 end
