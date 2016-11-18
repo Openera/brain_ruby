@@ -13,7 +13,7 @@ module BrainRuby
     end
 
     def url(location, destination)
-      response = HTTParty.get("#{@base_uri}:#{@port}/rest/url?apiKey=#{@api_key}&location=#{location}&destination=#{CGI.escape(destination)}")
+      response = HTTParty.get("#{@base_uri}:#{@port}/rest/url?apiKey=#{@api_key}&location=#{location}&destination=#{CGI.escape(destination)}", verify: false)
       if response.code == 200
         response.body
       else

@@ -28,17 +28,18 @@ class BrainRubyTest < Minitest::Test
     assert !@test_obj.url("wdc", "http://www.example.org")
   end
 
+  #wrong assumption
   #make sure the same request will receive the same response
   # def test_consistent
-  #   first_result = @test_obj.url("wdc", "")
-  #   second_result = @test_obj.url("wdc", "")
-  #   assert_equal(first_result, second_result) #if this doesn't work, try assert_match
+  #   first_result = @test_obj.url("wdc", @test_url)
+  #   second_result = @test_obj.url("wdc", @test_url)
+  #   assert_equal(first_result, second_result) 
   # end
 
-  # #make sure requests to different locations will receive different responses
-  # def test_location
-  #   first_result = @test_obj.url("wdc", "")
-  #   second_result = @test_obj.url("lon", "")
-  #   refute_equal(first_result, second_result)
-  # end
+  #make sure requests to different locations will receive different responses
+  def test_location
+    first_result = @test_obj.url("wdc", @test_url)
+    second_result = @test_obj.url("lon", @test_url)
+    refute_equal(first_result, second_result)
+  end
 end
