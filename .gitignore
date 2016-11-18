@@ -5,6 +5,7 @@
 /pkg/
 /spec/reports/
 /tmp/
+conf*.yml
 
 *.rbc
 capybara-*.html
@@ -33,3 +34,6 @@ bower.json
 
 # Ignore Byebug command history file.
 .byebug_history
+
+
+
